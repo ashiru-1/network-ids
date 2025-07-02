@@ -156,8 +156,8 @@ export default function InvestigationsPage() {
       {/* Header */}
       <header className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-3">
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center py-4 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:space-x-3 gap-2 sm:gap-0 w-full sm:w-auto justify-center sm:justify-start">
               <Search className="h-8 w-8 text-blue-600" />
               <div>
                 <h1 className="text-2xl font-semibold text-gray-900">Security Investigations</h1>
@@ -165,7 +165,7 @@ export default function InvestigationsPage() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-wrap justify-center sm:justify-end items-center gap-2 sm:space-x-4 w-full sm:w-auto">
               <Button onClick={loadAlerts} variant="outline" size="sm">
                 <RefreshCw className="h-4 w-4 mr-2" />
                 Refresh

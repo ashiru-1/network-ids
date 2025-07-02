@@ -473,9 +473,9 @@ export default function Dashboard() {
       {/* Header */}
       <header className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center py-4 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 gap-2 sm:gap-0 w-full sm:w-auto justify-center sm:justify-start">
+              <div className="flex items-center space-x-3 justify-center">
                 <Shield className="h-8 w-8 text-blue-600" />
                 <div>
                   <h1 className="text-2xl font-semibold text-gray-900">Network IDS</h1>
@@ -484,7 +484,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-wrap justify-center sm:justify-end items-center gap-2 sm:space-x-4 w-full sm:w-auto">
               {lastUpdate && (
                 <div className="flex items-center space-x-2 text-sm text-gray-500">
                   <Clock className="h-4 w-4" />
@@ -520,31 +520,36 @@ export default function Dashboard() {
                 )}
               </Button>
 
-              <Button
-                onClick={handleAttackSimulation}
-                disabled={isAttackRunning}
-                className="bg-red-600 hover:bg-red-700"
-              >
-                {isAttackRunning ? (
-                  <>
-                    <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
-                    Simulating Attack...
-                  </>
-                ) : (
-                  <>
-                    <Bug className="h-4 w-4 mr-2" />
-                    Simulate Attack
-                  </>
-                )}
-              </Button>
+              {/* Group Simulate Attack and Manage Investigations buttons for mobile */}
+              <div className="flex flex-row gap-2 w-full sm:w-auto justify-center sm:inline-flex">
+                <Button
+                  onClick={handleAttackSimulation}
+                  disabled={isAttackRunning}
+                  className="bg-red-600 hover:bg-red-700"
+                  size="sm"
+                >
+                  {isAttackRunning ? (
+                    <>
+                      <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+                      Simulating Attack...
+                    </>
+                  ) : (
+                    <>
+                      <Bug className="h-4 w-4 mr-2" />
+                      Simulate Attack
+                    </>
+                  )}
+                </Button>
 
-              <Button
-                onClick={() => (window.location.href = "/investigations")}
-                className="bg-blue-600 hover:bg-blue-700"
-              >
-                <Search className="h-4 w-4 mr-2" />
-                Manage Investigations
-              </Button>
+                <Button
+                  onClick={() => (window.location.href = "/investigations")}
+                  className="bg-blue-600 hover:bg-blue-700"
+                  size="sm"
+                >
+                  <Search className="h-4 w-4 mr-2" />
+                  Manage Investigations
+                </Button>
+              </div>
             </div>
           </div>
         </div>
