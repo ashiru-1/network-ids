@@ -478,7 +478,7 @@ export default function Dashboard() {
               <div className="flex items-center space-x-3 justify-center">
                 <Shield className="h-8 w-8 text-blue-600" />
                 <div>
-                  <h1 className="text-2xl font-semibold text-gray-900">Network IDS</h1>
+                  <h1 className="text-2xl font-semibold text-gray-900">Host IDS</h1>
                   <p className="text-sm text-gray-500">Advanced Intrusion Detection & Response</p>
                 </div>
               </div>
