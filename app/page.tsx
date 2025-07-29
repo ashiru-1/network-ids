@@ -186,7 +186,7 @@ export default function Dashboard() {
         throw new Error("Failed to generate report")
       }
     } catch (err) {
-      alert("❌ Failed to generate report. Please try again.")
+      alert("❌ Failed to generate report. Please try again .")
     } finally {
       setIsGeneratingReport(false)
     }
